@@ -1,0 +1,39 @@
+@use 'sass:math';
+
+$columns: 12;
+$column-base-width: math.div(100%, $columns);
+
+
+.gridcontainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  @media (min-width: 1024px) {
+    padding: 0;
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+[class*='col-'] {
+  min-height: 1px;
+  width: $column-base-width;
+  padding: 0 1em;
+}
+
+@for $i from 1 through $columns {
+  .col-#{$i} {
+    width: $column-base-width * $i;
+  }
+}
+
+@media (max-width: 1024px) {
+  [class*='col-'] {
+    width: 100%;
+  }
+}

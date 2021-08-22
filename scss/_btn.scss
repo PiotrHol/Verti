@@ -1,0 +1,48 @@
+.btn {
+  background: $blueBorder;
+  color: $whiteColor;
+  border-radius: 6px;
+  font-size: 1.25em;
+  padding: 0.8em 0.9em;
+  font-weight: 800;
+  text-decoration: none;
+  margin-bottom: 1em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 750px) {
+    font-size: 2.25em;
+  }
+
+  span {
+    margin-right: 10px;
+  }
+
+  &--banner {
+    @media (min-width: 1024px) {
+      flex-direction: row-reverse;
+      span {
+        margin-right: 0;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &--main {
+    margin: 3em 0 4em 0;
+    @media (min-width: 750px) {
+      font-size: 1.25em;
+    }
+    @media (min-width: 1024px) {
+      width: 40%;
+    }
+  }
+
+  &--grey {
+    background-color: $bgColor;
+    color: $textColor;
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,191 @@
+.main-header {
+  margin: 44px auto 20px;
+  @media (min-width: 1024px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    text-align: center;
+
+    @media (min-width: 1024px) {
+      display: flex;
+      align-items: center;
+    }
+
+    &__name {
+      background: $bgLogo;
+      color: $whiteColor;
+      border-radius: 6px;
+      font-weight: 800;
+      font-size: 2.75em;
+      padding: 0.1em 0.275em;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      @media (min-width: 1024px) {
+        margin-right: 15px;
+      }
+    }
+
+    &__sub {
+      font-weight: 800;
+      display: block;
+      line-height: 3em;
+    }
+  }
+
+  .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    padding: 20px;
+    width: 58px;
+    height: 38px;
+    background: $textColor;
+    opacity: 0.3;
+    border-radius: 6px;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 2;
+    @media (min-width: 1024px) {
+      display: none;
+    }
+    .navicon {
+      background: $whiteColor;
+      display: block;
+      height: 2px;
+      position: relative;
+      transition: background .2s ease-out;
+      width: 18px;
+      &::before, &::after {
+        background: $whiteColor;
+        content: '';
+        display: block;
+        height: 2px;
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 18px;
+      }
+      &:after {
+        top: 5px;
+      }
+      &:before {
+        top: -5px;
+      }
+    }
+  }
+
+  .menu-btn {
+    display: none;
+    &:checked ~ .menu-icon span {
+      background: transparent;
+    }
+    &:checked ~ .menu-icon span:before {
+      transform: rotate(45deg);
+      top: 0;
+    }
+    &:checked ~ .menu-icon span:after {
+      transform: rotate(-45deg);
+      top: 0;
+    }
+    &:checked ~ nav {
+      transform: translate(0);
+    }
+  }
+
+  nav {
+    @media (max-width: 1024px) {
+      position: fixed;
+      right: 0;
+      top: 0;
+      background: $whiteColor;
+      height: 100vh;
+      width: 100%;
+      transform: translate(-100%);
+      transition: all 0.5s ease-out;
+      box-shadow: 0 0 10px $textFootNavColor;
+      z-index: 1;
+      .main-nav {
+        list-style: none;
+        a {
+          display: block;
+          text-decoration: none;
+          font-size: 13pt;
+          border-bottom: 1px solid $textFootNavColor;
+          color: $textColor;
+          text-align: center;
+          padding: 20px 40px;
+        }
+      }
+    }
+    .main-nav {
+      @media (min-width: 1024px) {
+        display: flex;
+        list-style: none;
+        a {
+          display: block;
+          margin-left: 10px;
+          padding: 7px 13px;
+          font-weight: 800;
+          color: $textColor;
+          text-decoration: none;
+          @media (max-width: 1024px) {
+            padding: 50px 20px;
+          }
+          &:hover {
+            background-color: $textColor;
+            color: $whiteColor;
+            border-radius: 6px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.banner {
+  background-color: $whiteColor;
+  text-align: center;
+  padding: 15px;
+  margin: 0 15px;
+  border-radius: 6px;
+  box-shadow: 0 3px 0 0 rgb(0 0 0 / 5%);
+  @media (min-width: 750px) {
+    padding: 44px;
+  }
+  @media (min-width: 1024px) {
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+    margin: 0 auto;
+    .left-banner {
+      width: 55%;
+    }
+    .right-banner {
+      width: 40%;
+    }
+  }
+  .left-banner {
+    h2 {
+      font-size: 2em;
+      margin: 0.75em 0 0.5em 0;
+
+      @media (min-width: 750px) {
+        font-size: 3em;
+      }
+    }
+    p {
+      font-size: 1.5em;
+      line-height: 1.5em;
+      margin-bottom: 20px;
+      @media (min-width: 750px) {
+        font-size: 2.75em;
+        line-height: 1.35em;
+      }
+      @media (min-width: 1024px) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
